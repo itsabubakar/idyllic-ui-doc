@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom"
 import { AiOutlineEdit } from "react-icons/ai"
 
-const Linker = ({ github, pageLink }) => {
+interface LinkerProps {
+    github: string,
+    pageLink: string
+}
+
+const Linker = ({ github, pageLink }: LinkerProps) => {
     return (
         <div className='py-8  flex flex-col'>
-            <Link className='text-sm text-gray-500 flex items-center hover:text-blue-500' to='/'><AiOutlineEdit className="mr-1" size={20} />Edit this page on Github</Link>
+            <Link className='text-sm text-gray-500 flex items-center hover:text-blue-500' to={`/${github}`}><AiOutlineEdit className="mr-1" size={20} />Edit this page on Github</Link>
 
             <div className='ml-auto'>
                 <h3 className='text-sm text-gray-600 mb-2'>Next</h3>

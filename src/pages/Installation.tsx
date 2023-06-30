@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 // import CodeBlock from '../components/CodeBlock'
 import Code from '../components/Code';
 import CodeBlock from '../components/CodeBlock';
@@ -7,38 +7,38 @@ import CodeBlock from '../components/CodeBlock';
 
 const Installation = () => {
 
-    const [packageManager, setPackageManager] = useState('npm i')
+    // const [packageManager, setPackageManager] = useState('npm i')
 
-    const setActive = (e: any) => {
-        let tabs = e.target.parentElement.childNodes;
-        for (let i = 0;i < tabs.length;i++) {
-            tabs[i].classList.remove('border-b-2')
-        }
-        e.target.classList.add('border-b-2');
-        let manager = e.target.textContent
-        if (manager === 'npm') {
-            setPackageManager('npm i')
-        } else if (manager === 'pnpm') {
-            setPackageManager('pnpm add')
-        } else {
-            setPackageManager('yarn add')
-        }
-    }
+    // const setActive = (e: any) => {
+    //     let tabs = e.target.parentElement.childNodes;
+    //     for (let i = 0;i < tabs.length;i++) {
+    //         tabs[i].classList.remove('border-b-2')
+    //     }
+    //     e.target.classList.add('border-b-2');
+    //     let manager = e.target.textContent
+    //     if (manager === 'npm') {
+    //         setPackageManager('npm i')
+    //     } else if (manager === 'pnpm') {
+    //         setPackageManager('pnpm add')
+    //     } else {
+    //         setPackageManager('yarn add')
+    //     }
+    // }
 
-    const code = ` ${packageManager} idyllic-ui`
+    //     const code = ` ${packageManager} idyllic-ui`
 
 
-    const codeBlock = `
-const GroceryItem: React.FC<GroceryItemProps> = ({ item }) => {
-  return (
-    <div>
-      <h2>{item.name}</h2>
-      <p>Price: {item.price}</p>
-      <p>Quantity: {item.quantity}</p>
-    </div>
-  );
-}
-`
+    //     const codeBlock = `
+    // const GroceryItem: React.FC<GroceryItemProps> = ({ item }) => {
+    //   return (
+    //     <div>
+    //       <h2>{item.name}</h2>
+    //       <p>Price: {item.price}</p>
+    //       <p>Quantity: {item.quantity}</p>
+    //     </div>
+    //   );
+    // }
+    // `
 
     return (
         <div>
@@ -47,7 +47,7 @@ const GroceryItem: React.FC<GroceryItemProps> = ({ item }) => {
                 <p className="text-base text-gray-700 pt-6">To use Idyllic UI in your React project, run one of the following commands in your terminal:</p>
 
                 <div className="bg-white  mt-4">
-                    <nav className="flex flex-col sm:flex-row" onClick={setActive}>
+                    <nav className="flex flex-col sm:flex-row">
                         <button className="text-gray-600 text-sm py-2 px-6 block hover:text-blue-500 focus:outline-none border-b-2 font-medium border-gray-500 -mb-[2px]">
                             npm
                         </button>
