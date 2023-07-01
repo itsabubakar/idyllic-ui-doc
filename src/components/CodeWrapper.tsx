@@ -8,6 +8,7 @@ interface CodeWrapper {
 const CodeWrapper = ({ Idyllic, plainJsx }: CodeWrapper) => {
 
     const handleClick = (e: any) => {
+        if (e.target.tagName !== 'BUTTON') return
 
         let btns = e.target.parentElement.childNodes
         btns[0].classList.remove('border-b-2')
@@ -16,7 +17,6 @@ const CodeWrapper = ({ Idyllic, plainJsx }: CodeWrapper) => {
         e.target.classList.add('border-b-2')
 
         let tabs = e.target.parentElement.parentElement.childNodes;
-        if (e.target.tagName !== 'BUTTON') return
 
 
 

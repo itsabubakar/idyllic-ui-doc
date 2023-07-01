@@ -11,11 +11,11 @@ body>div {
 }
 
 .link {
-  @apply text-sm text-gray-700 px-2 py-2 hover:text-blue-500
+  @apply text-sm text-gray-700 px-2 py-2 hover:text-blue-500 capitalize
 }
 
 .active-link {
-  @apply bg-gray-200 rounded-md text-gray-900 font-semibold 
+  @apply bg-gray-200 rounded-md text-gray-900 
 }
 
 

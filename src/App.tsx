@@ -18,7 +18,7 @@ import ButtonProps from './pages/Button/ButtonProps';
 
 const App = () => {
   return (
-    <div className='relative h-full'>
+    <div className='relative'>
       <Context>
         <Router>
           <Navbar />

@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 
 
 const Button = () => {
+
     const setActive = (e: any) => {
         let tabs = e.target.parentElement.childNodes;
         for (let i = 0;i < tabs.length;i++) {
@@ -9,6 +10,7 @@ const Button = () => {
         }
         e.target.classList.add('border-b-[2px]');
     }
+
     return (
         <div className="">
             <div>
@@ -17,6 +19,7 @@ const Button = () => {
             </div>
 
             <div className="bg-white mt-4">
+
                 <nav className="flex border-b " onClick={setActive}>
                     <Link to={"/documentation/button"} className="text-gray-600 text-sm py-2 px-6 block hover:text-blue-500 focus:outline-none border-b-[2px] font-medium border-gray-500 -mb-[1.4px]">
                         Usage
@@ -25,6 +28,7 @@ const Button = () => {
                         Props
                     </Link>
                 </nav>
+
             </div>
 
             <div className="">

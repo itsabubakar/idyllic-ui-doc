@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 
 const Hero = () => {
     return (
-        <div className="flex justify-center items-center h-full">
-            <section className="px-5 -mt-20">
+        <div className="flex justify-center items-center  min-h-screen">
+            <section className="px-5 ">
                 <h1 className="text-5xl md:text-7xl font-bold text-gray-700 text-center pb-10">Idyllic UI</h1>
                 <p className="pb-8 md:text-xl text-base text-center max-w-xl md:max-w-3xl text-gray-500">The perfect minimal UI library containing regulary used components you can use for your next project minimally styled and easy to use</p>
                 <div className="flex gap-2  justify-center">
