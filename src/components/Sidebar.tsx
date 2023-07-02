@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom"
+import { AppContext } from "../context/Context"
+import { useContext } from 'react'
 
 const Sidebar = () => {
+
     const links = {
         forms: {
             buttons: '/documentation/button',
@@ -14,22 +17,22 @@ const Sidebar = () => {
         Typography: {
             header: '/'
         },
-        'Data display': {
-            badge: '/',
-            code: '/',
-            KBD: '/',
-            Tag: '/'
-        },
+
         layout: {
             container: '/'
         },
         Media: {
-            Avatar: '/',
             icons: '/',
         },
         others: {
             shadows: '/'
         },
+    }
+
+    const { sidebarOpen, setSidebarOpen } = useContext(AppContext)
+
+    const handleClick = () => {
+        setSidebarOpen(!sidebarOpen)
     }
 
 
@@ -48,11 +51,11 @@ const Sidebar = () => {
             {
                 Object.entries(links).map(([key, val]) => {
                     return <div className="flex flex-col">
-                        <h3 className="text-sm text-gray-800 mt-2 font-medium capitalize pl-2 mb-1">{key}</h3>
+                        <h3 key={key} className="text-base text-gray-800 mt-2 font-medium capitalize pl-2 mb-1">{key}</h3>
                         {
                             Object.entries(val).map(([k, v]) => {
                                 return <div>
-                                    <NavLink to={v} className={({ isActive }) => (isActive ? 'text-xs font-medium  text-gray-700  py-1 hover:text-blue-500 capitalize inline-flex active-link px-2' : 'text-xs font-medium  text-gray-700  py-1 hover:text-blue-500 capitalize inline-flex px-2')}>{k}</NavLink>
+                                    <NavLink key={k} onClick={handleClick} to={v} className={({ isActive }) => (isActive ? 'text-sm font-medium  text-gray-700  py-1 hover:text-blue-500 capitalize inline-flex active-link px-2' : 'text-xs font-medium  text-gray-700  py-1 hover:text-blue-500 capitalize inline-flex px-2')}>{k}</NavLink>
                                 </div>
 
                             })
@@ -62,13 +65,6 @@ const Sidebar = () => {
                 })
             }
 
-            {/* <NavLink className={({ isActive }) => (isActive ? 'link active-link' : 'link')} to='/documentation/alert'>Alert</NavLink>
-                <NavLink className={({ isActive }) => (isActive ? 'link active-link' : 'link')} to='/documentation/button'>Button</NavLink>
-                <NavLink className={({ isActive }) => (isActive ? 'link active-link' : 'link')} to='/documentation/container'>Container</NavLink>
-                <NavLink className={({ isActive }) => (isActive ? 'link active-link' : 'link')} to='/documentation/header'>Header</NavLink>
-                <NavLink className={({ isActive }) => (isActive ? 'link active-link' : 'link')} to='/documentation/form'>FormControl</NavLink>
-                <NavLink className={({ isActive }) => (isActive ? 'link active-link' : 'link')} to='/documentation/spinner'>Spinner</NavLink>
-                <NavLink className={({ isActive }) => (isActive ? 'link active-link' : 'link')} to='/documentation/text'>Text</NavLink> */}
         </div>
     )
 }

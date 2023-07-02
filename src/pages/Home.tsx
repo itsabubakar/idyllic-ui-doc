@@ -8,11 +8,11 @@ const Home = () => {
 
     return (
         <>
-            <div className="flex  relative">
-                <div className={`${sidebarOpen ? 'absolute h-full' : 'hidden'} z-10   bg-white sm:relative`}>
+            <div className="flex relative sm:justify-center">
+                <div className={`${sidebarOpen ? 'absolute h-full sm:hidden' : 'hidden'} z-10   bg-white sm:relative`}>
                     <Sidebar />
                 </div>
-                <div className="p-5 sm:px-14 sm:py-10">
+                <div className="-mt-20">
                     <Hero />
                 </div>
             </div>
