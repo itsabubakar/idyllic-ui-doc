@@ -27,7 +27,7 @@ const ButtonProps = () => {
 
             {/* cn */}
             <Props
-                header="cn"
+                header="className"
                 description="Extend the styles or add unique classes to the component"
                 type="property"
                 defaultValue=""

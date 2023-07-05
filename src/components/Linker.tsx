@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { AiOutlineEdit } from "react-icons/ai"
 
 interface LinkerProps {
-    github: string,
+    github?: string,
     pageLink: string
 }
 

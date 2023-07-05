@@ -3,9 +3,10 @@ import CodeBlock from "./CodeBlock";
 interface CodeWrapper {
     Idyllic: string;
     plainJsx: string;
+    title: string;
 }
 
-const CodeWrapper = ({ Idyllic, plainJsx }: CodeWrapper) => {
+const CodeWrapper = ({ Idyllic, plainJsx, title = 'Plain' }: CodeWrapper) => {
 
     const handleClick = (e: any) => {
         if (e.target.tagName !== 'BUTTON') return
@@ -28,7 +29,7 @@ const CodeWrapper = ({ Idyllic, plainJsx }: CodeWrapper) => {
             if (currentTarget == 'Idyllic-UI') {
                 e.target.parentElement.parentElement.childNodes[0].classList.remove('hidden')
                 e.target.parentElement.parentElement.childNodes[1].classList.remove('hidden')
-            } else if (currentTarget == 'button.jsx') {
+            } else if (currentTarget == `${title}.jsx`) {
                 e.target.parentElement.parentElement.childNodes[0].classList.remove('hidden')
                 e.target.parentElement.parentElement.childNodes[2].classList.remove('hidden')
 
@@ -40,7 +41,7 @@ const CodeWrapper = ({ Idyllic, plainJsx }: CodeWrapper) => {
         <div className="rounded-md bg-[#2a2734]">
             <div className="flex gap-1" onClick={handleClick}>
                 <button className="text-white text-xs py-3 px-4 border-b-2 border-blue-500">Idyllic-UI</button>
-                <button className="text-white text-xs py-3 px-4 border-blue-300">button.jsx</button>
+                <button className="text-white text-xs py-3 px-4 border-blue-300">{title}.jsx</button>
             </div>
 
             <div>

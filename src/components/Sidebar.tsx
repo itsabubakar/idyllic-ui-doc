@@ -7,26 +7,23 @@ const Sidebar = () => {
     const links = {
         forms: {
             buttons: '/documentation/button',
-            inputs: '/'
+            inputs: '/documentation/input'
         },
         Feedback: {
             Alert: '/documentation/alert',
-            spinner: '/',
-            skeleton: '/'
+            spinner: '/documentation/spinner',
         },
         Typography: {
-            header: '/'
+            header: '/documentation/header'
         },
 
         layout: {
-            container: '/'
+            container: '/documentation/container'
         },
         Media: {
-            icons: '/',
+            icons: '/documentation/icons',
         },
-        others: {
-            shadows: '/'
-        },
+
     }
 
     const { sidebarOpen, setSidebarOpen } = useContext(AppContext)
@@ -50,14 +47,13 @@ const Sidebar = () => {
 
             {
                 Object.entries(links).map(([key, val]) => {
-                    return <div className="flex flex-col">
-                        <h3 key={key} className="text-base text-gray-800 mt-2 font-medium capitalize pl-2 mb-1">{key}</h3>
+
+                    return <div className="flex flex-col" key={key}>
+                        <h3 className="text-sm text-gray-800 mt-2 font-medium capitalize pl-2 mb-1">{key}</h3>
                         {
                             Object.entries(val).map(([k, v]) => {
-                                return <div>
-                                    <NavLink key={k} onClick={handleClick} to={v} className={({ isActive }) => (isActive ? 'text-sm font-medium  text-gray-700  py-1 hover:text-blue-500 capitalize inline-flex active-link px-2' : 'text-xs font-medium  text-gray-700  py-1 hover:text-blue-500 capitalize inline-flex px-2')}>{k}</NavLink>
-                                </div>
 
+                                return <NavLink key={k} onClick={handleClick} to={v} className={({ isActive }) => (isActive ? 'text-[13px] font-medium  text-gray-700  py-1 hover:text-blue-500 capitalize inline-flex active-link px-2' : 'text-[13px] font-medium  text-gray-700  py-1 hover:text-blue-500 capitalize inline-flex px-2')}>{k}</NavLink>
                             })
                         }
                     </div>

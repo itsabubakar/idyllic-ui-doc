@@ -55,7 +55,7 @@ const CodeBlock = ({ codeString }: CopyBlockProps) => {
                 language="tsx"
             >
                 {({ style, tokens, getTokenProps }) => (
-                    <pre style={style} className="pre relative text-[12px] py-4 text-sm rounded-b-md">
+                    <pre style={style} className="pre relative text-[12px] py-4 text-sm rounded-t-md rounded-b-md">
                         <Button
                             className="focus:outline-none"
                             onClick={() => {
