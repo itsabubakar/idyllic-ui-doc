@@ -1,20 +1,20 @@
-
-
 export const SpinnerImport = `import {Spinner} from 'idyllic-ui`
 
 export const SpinnerPreview = ` <Spinner />`
 
 export const SpinnerVariant = `<Spinner size="sm" />
 <Spinner size="md" />
-<Spinner size="lg" />
-<Spinner size="xl" />`
+<Spinner size="lg" />`
 
-export const SpinnerSizeVariant = `<Spinner color="!border-green-500" />
-<Spinner color="!border-yellow-500" />
-<Spinner color="!border-pink-500" />
-<Spinner color="!border-orange-500" />`
+export const SpinnerSizeVariant = `<Spinner color="dark" />
+<span className="bg-gray-800 rounded p-2">
+    <Spinner color="light" />
+</span>`
 
-export const SpinnerExtend = `<Alert className="bg-green-500 text-white">Alert</Alert>
-<Alert className="bg-red-500 text-white " >Alert</Alert>
-<Alert className="bg-gray-500 text-white" >Alert</Alert>
-<Alert className="bg-yellow-500 text-white">Alert</Alert>`
+export const SpinnerJSX = `<div
+className={"border-gray-900  animate-spin rounded-full border-2 border-solid  border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]  w-8 h-8"}
+role="status">
+<span
+  className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+>Loading...</span>
+</div>`

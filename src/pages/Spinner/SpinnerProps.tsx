@@ -22,8 +22,8 @@ const SpinnerProps = () => {
             {/* className */}
             <Props
                 header="color"
-                description="The color prop takes a valid tailwindcss color value"
-                type="property"
+                description="Changes the border of the spinner either dark or light"
+                type="'dark' | 'light'"
                 defaultValue="black"
             />
 

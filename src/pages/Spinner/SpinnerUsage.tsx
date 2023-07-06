@@ -1,6 +1,6 @@
 import CodeBlock from "../../components/CodeBlock"
 import { Spinner } from 'idyllic-ui'
-import { SpinnerImport, SpinnerPreview, SpinnerVariant, SpinnerExtend, SpinnerSizeVariant } from "./SpinnerSnippets"
+import { SpinnerImport, SpinnerPreview, SpinnerVariant, SpinnerJSX, SpinnerSizeVariant } from "./SpinnerSnippets"
 import CodeWrapper from "../../components/CodeWrapper"
 
 
@@ -20,7 +20,7 @@ const SpinnerUsage = () => {
                 <h2 className="text-2xl text-gray-800 font-semibold pt-14 pb-5">Usage</h2>
                 {/* Preview */}
                 <div className="border border-gray-300 mb-5 py-3 px-2 rounded">
-                    <Spinner />
+                    <Spinner color="dark" />
                 </div>
                 <CodeBlock codeString={SpinnerPreview} />
             </div>
@@ -34,12 +34,12 @@ const SpinnerUsage = () => {
                     <Spinner size="sm" />
                     <Spinner size="md" />
                     <Spinner size="lg" />
-                    <Spinner size="xl" />
                 </div>
 
                 <CodeWrapper
+                    title="Spinner"
                     Idyllic={SpinnerVariant}
-                    plainJsx={SpinnerExtend}
+                    plainJsx={SpinnerJSX}
                 />
             </div>
 
@@ -47,17 +47,18 @@ const SpinnerUsage = () => {
             <div>
                 <h2 className="text-2xl text-gray-800 font-semibold pt-14 pb-5">Spinner Colors</h2>
                 {/* Preview */}
-                <div className="border border-gray-300 mb-5 py-3 px-2 rounded flex gap-5 flex-wrap">
-                    <Spinner color="!border-green-500" />
-                    <Spinner color="!border-yellow-500" />
-                    <Spinner color="!border-pink-500" />
-                    <Spinner color="!border-orange-500" />
+                <div className="border border-gray-300 mb-5 py-3 px-2 rounded flex gap-5 flex-wrap items-center">
+                    <Spinner color="dark" />
+                    <span className="bg-gray-800 rounded p-2">
+                        <Spinner color="light" />
+                    </span>
 
                 </div>
 
                 <CodeWrapper
+                    title="Spinner"
                     Idyllic={SpinnerSizeVariant}
-                    plainJsx={SpinnerExtend}
+                    plainJsx={SpinnerJSX}
                 />
             </div>
 
